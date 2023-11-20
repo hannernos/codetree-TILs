@@ -24,12 +24,12 @@ int run(){
     int j=0;
     vector<int>::iterator it;
 
-    for(int i=0;i<n;i++){
+    for(int i=1;i<=n;i++){
         tem_val=0;
         j=1;
         for(it=mv.begin();it!=mv.end();it++){
             j++;
-            tem_val=tem_val+(*it)*abs(n-j);
+            tem_val=tem_val+(*it)*abs(i-j);
         }
 
         if(tem_val<min_val){
