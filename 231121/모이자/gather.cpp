@@ -16,7 +16,7 @@ int abs(int a){
 }
 int run(){
     int a,b;
-    a=100000;
+    a=200000000;
     for(int i=1;i<=n;i++){
         b=0;
         for(int j=1;j<=n;j++){
