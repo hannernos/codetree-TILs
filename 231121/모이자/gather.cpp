@@ -1,58 +1,48 @@
-/*
-*/
-
-#include <iostream>
-#include <vector>
+#include<iostream>
 
 using namespace std;
 
+//struct
 
-int n;//1 ~ 100
-int a[101];
-vector<int> mv;
-
+//var
+int n;
+int arr[101];
+//func
 int abs(int a){
     if(a<0){
         a=-a;
     }
     return a;
 }
-
 int run(){
-    int min_val=9000;
-    int tem_val;
-    int j=0;
-    vector<int>::iterator it;
-
+    int a,b;
+    a=100000;
     for(int i=1;i<=n;i++){
-        tem_val=0;
-        j=1;
-        for(it=mv.begin();it!=mv.end();it++){
-            j++;
-            tem_val=tem_val+(*it)*abs(i-j);
-        }
+        b=0;
+        for(int j=1;j<=n;j++){
+            b+=arr[j]*abs(i-j);
 
-        if(tem_val<min_val){
-            min_val = tem_val;
+        }
+        if(b<a){
+            a=b;
         }
     }
-    return  min_val;
+    return a;
 }
-
 void init(){
     cin>>n;
     int tem;
-    for(int i=0;i<n;i++){
-        cin>>tem;
-        mv.push_back(tem);
+    for(int i=1;i<=n;i++){
+        cin>>arr[i];
     }
-
 }
 
+int main(){
 
-int main() {
-    // 여기에 코드를 작성해주세요.
     init();
     cout<<run();
+
+
+
     return 0;
 }
