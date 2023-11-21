@@ -10,7 +10,7 @@ list<int> ml;
 void run(){
     int tem;
 
-    if (n==0)) {
+    if (n==0){
         ml.push_front(0);
     }
 
