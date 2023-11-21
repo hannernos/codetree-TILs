@@ -10,6 +10,10 @@ list<int> ml;
 void run(){
     int tem;
 
+    if (ml.empty()) {
+        ml.push_front(0);
+    }
+
     while(n>0){
         tem = n%2;
         ml.push_front(tem);
