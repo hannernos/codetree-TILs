@@ -22,13 +22,10 @@ void init(){
     int tem;
     cnt=0;
     cin>>n;
-    for(int i=0;i<n;i++){
+    for(int i=1;i<=n;i++){
         cin>>tem;
-
         tem++;
-
-        arr[i+1] = tem;
-        mv[tem].push_back(i+1);
+        mv[tem].push_back(i);
     }
     cin>>target;
     target = target + 1 ;
@@ -58,5 +55,7 @@ int main() {
     init();
     run(0);
     cout<<cnt;
+
+    
     return 0;
 }
