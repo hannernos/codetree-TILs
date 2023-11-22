@@ -40,7 +40,7 @@ void run(int a){
 
     tem_length = tem_length-a;
 
-    return
+    return;
 }
 
 void init(){
