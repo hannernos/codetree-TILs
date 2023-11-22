@@ -27,8 +27,8 @@ void init(){
 
         tem++;
 
-        arr[i] = tem;
-        mv[tem].push_back(i);
+        arr[i+1] = tem;
+        mv[tem].push_back(i+1);
     }
     cin>>target;
     target = target + 1 ;
@@ -56,7 +56,6 @@ void run(int a){
 int main() {
     // 여기에 코드를 작성해주세요.
     init();
-
     run(0);
     cout<<cnt;
     return 0;
