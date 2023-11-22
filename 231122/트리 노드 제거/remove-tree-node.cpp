@@ -38,10 +38,11 @@ void run(int a){
 //지워진 이후 트리에서의 리프노드의 갯수 출력
 
     if(!mv[a].empty()){
-        cnt++;
+        if(a!=target){
+            cnt++;
+        }
         return;
     }
-
 
     for(auto ai : mv[a]){
         if(ai == target){
