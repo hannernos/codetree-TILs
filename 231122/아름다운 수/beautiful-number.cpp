@@ -38,7 +38,9 @@ void run(int a){
         run(i);
     }
 
+    tem_length = tem_length-a;
 
+    return
 }
 
 void init(){
