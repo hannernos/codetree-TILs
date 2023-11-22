@@ -27,6 +27,7 @@ void run(int a){
     //딱 길이만큼이라면 카운트 올리고 return
     if(tem_length==n){
         cnt++; 
+        tem_length = tem_length-a;
         return; //여기서 무한루프 조심
     }
     //길이 안넘어간다면 계속 재귀
