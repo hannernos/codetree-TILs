@@ -31,6 +31,7 @@ void init(){
         mv[tem].push_back(i);
     }
     cin>>target;
+    target = target + 1 ;
 }
 
 
