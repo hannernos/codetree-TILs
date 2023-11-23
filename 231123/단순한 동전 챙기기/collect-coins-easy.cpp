@@ -103,16 +103,15 @@ void init() {
                 des_dy = i; des_dx = j;
             }
 
-            if (((tem - '0') > 0) && ((tem - '0') < 9)) {
+            if (((tem - '0') > 0) && ((tem - '0') < 10)) {
                 des_list[tem - '0'][0] = i;
                 des_list[tem - '0'][1] = j;
                 coincount++;
             }
-
-
             map[i][j] = tem;
         }
     }
+    //cout << coincount;
 }
 
 int main() {
