@@ -12,11 +12,10 @@ char map[21][21];
 int st_dy, st_dx;
 int des_dy, des_dx;
 int des_list[10][2];
-//
+
 //vector<int> coins;
 int coins[11] = {};
 int coincount;
-
 
 int tem_distance;
 int min_distance;
@@ -79,6 +78,7 @@ void run(int depth,int tem_coin) {
         if (tem_distance < min_distance) {
             min_distance = tem_distance;
         }
+        return;
     }
 
     for (int i = tem_coin+1; i < 9; i++) {
