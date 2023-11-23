@@ -8,6 +8,7 @@ char map[21][21];
 int st_dy, st_dx;
 int des_dy, des_dx;
 int des_list[10][2];
+bool coin_exists[10] = {}; 
 
 int coins[11] = {};
 int coincount;
@@ -47,7 +48,8 @@ void run(int depth, int last_coin) {
         return;
     }
 
-    for (int i = last_coin + 1; i <= coincount; i++) {
+    for (int i = last_coin + 1; i <= 9; i++) {
+        if (!coin_exists[i]) continue; // 존재하는 동전만 고려
         if (depth > 0 && coins[depth - 1] >= i) continue; // 순차적 증가 확인
         coins[depth] = i;
         run(depth + 1, i);
@@ -66,9 +68,10 @@ void init() {
                 des_dy = i; des_dx = j;
             }
             if (isdigit(map[i][j])) {
-                des_list[map[i][j] - '0'][0] = i;
-                des_list[map[i][j] - '0'][1] = j;
-                coincount = max(coincount, map[i][j] - '0');
+                int coinNum = map[i][j] - '0';
+                des_list[coinNum][0] = i;
+                des_list[coinNum][1] = j;
+                coin_exists[coinNum] = true;
             }
         }
     }
@@ -76,10 +79,6 @@ void init() {
 
 int main() {
     init();
-    if (coincount < 3) {
-        cout << "-1";
-        return 0;
-    }
     run(0, 0);
     cout << (min_distance == 1000000 ? -1 : min_distance);
     return 0;
