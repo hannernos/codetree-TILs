@@ -22,8 +22,11 @@ void run(int depth) {
     if (depth == m) {
         // 길이 만족, 종료
         //최댓값 비교하고 갱신
-        int tem_sum;
-        tem_sum = temres[0] ^ temres[1] ^ temres[2];
+        int tem_sum= temres[0];
+        //본문에서만 m이고 for문으로 ㄱㄱ
+        for (int i = 0; i < m-1;i++) {
+            tem_sum = temres[i] ^ temres[i + 1];
+        }
 
         if (tem_sum > maxRes) {
             maxRes = tem_sum;
