@@ -6,49 +6,39 @@ using namespace std;
 int n, m;
 int maxRes = 0;
 
-vector<int> mv; // 정수 리스트
+vector<int> nums; 
 vector<bool> visited;
 
-vector<int> temres; // 현재 결과값
-//func
-
-void run(int depth) {
+void run(int depth, int start, int xorSum) {
     if (depth == m) {
-        int tem_sum = 0;
-        for (int i = 0; i < m; i++) {
-            tem_sum ^= temres[i]; 
-        }
-
-        maxRes = max(maxRes, tem_sum);
+        maxRes = max(maxRes, xorSum); 
         return;
     }
 
-    for (int i = 0; i < n; i++) {
+    for (int i = start; i < n; i++) {
         if (visited[i]) {
             continue;
         }
 
         visited[i] = true;
-        temres.push_back(mv[i]);
-        run(depth + 1);
-        temres.pop_back();
+        run(depth + 1, i + 1, xorSum ^ nums[i]); 
         visited[i] = false;
     }
 }
 
 void init() {
     cin >> n >> m;
-    mv.resize(n);
+    nums.resize(n);
     visited.resize(n, false);
-    
+
     for (int i = 0; i < n; i++) {
-        cin >> mv[i];
+        cin >> nums[i];
     }
 }
 
 int main() {
     init();
-    run(0);
+    run(0, 0, 0);
     cout << maxRes;
     return 0;
 }
