@@ -31,6 +31,9 @@ int get_distance() {
     int a = coins[0];
     int b = coins[1];
     int c = coins[2];
+    //cout << "a : " << a;
+    //cout << "b : " << b;
+    //cout << "c : " << c;
     //var
     vector<pair<int, int>> uv;;
     int tem_distance_l=0;
@@ -56,11 +59,20 @@ int get_distance() {
         des_x_l = uv[i+1].second;
         tem_distance_l = abs(des_y_l-st_y_l)+abs(des_x_l-st_x_l);
         total_distance_l += tem_distance_l;
+        //cout << "total_element" << total_distance_l << endl;
     }
     
+    //cout << "total" << total_distance_l << endl;
     return total_distance_l;
 }
+void print() {
 
+    for (int i = 0; i < 3; i++) {
+        cout << "0 : " << coins[0] << endl;
+        cout << "1 : " << coins[1] << endl;
+        cout << "2 : " << coins[2] << endl;
+    }
+}
 
 void run(int depth,int tem_coin) {
     //시작점에서 출발하여 동전의 숫자가 증가하는 순서대로 
@@ -72,7 +84,9 @@ void run(int depth,int tem_coin) {
     //숫자 위치는 다 아니까
     //이건 9개중에 숫자 3개 뽑는 문제
     //그 3개 경로를 계속 비교
+
     if (depth == 3) {
+        //print();
         // 3개 뽑은 상태 -> 비교 ㄱㄱ
         tem_distance = get_distance();
         if (tem_distance < min_distance) {
@@ -83,7 +97,7 @@ void run(int depth,int tem_coin) {
 
     for (int i = tem_coin+1; i < 9; i++) {
         coins[depth]=i;
-        run(++depth,i);
+        run(depth+1,i);
     }
     
 }
