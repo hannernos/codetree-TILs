@@ -22,7 +22,7 @@ void run(int depth) {
     if (depth == m) {
         // 길이 만족, 종료
         //최댓값 비교하고 갱신
-        int tem_sum= temres[0];
+        int tem_sum=0;
         //본문에서만 m이고 for문으로 ㄱㄱ
         for (int i = 0; i < m-1;i++) {
             tem_sum = temres[i] ^ temres[i + 1];
@@ -33,14 +33,14 @@ void run(int depth) {
         }
     }
 
-    for (int i = 1; i <= n; i++) {
+    for (int i = 0; i < n; i++) {
 
         if (visited[i]) {
             continue;
         }
 
         visited[i] = true;
-        temres.push_back(i);
+        temres.push_back(mm[i]);
         run(depth + 1);
         temres.pop_back();
         visited[i] = false;
@@ -53,7 +53,7 @@ void init() {
     cin >> n >> m;
 
     visited.push_back(false);
-    for (int i = 1; i <= n; i++) {
+    for (int i = 0; i < n; i++) {
         cin >> tem;
         mv.push_back(tem);
         visited.push_back(false);
