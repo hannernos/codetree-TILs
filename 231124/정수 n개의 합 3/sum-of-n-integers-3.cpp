@@ -13,7 +13,7 @@ void run() {
     max_square = 0;
     for (int i = k; i <= n; i++) {
         for (int j = k; j <= n; j++) {
-            tem_square = arr[i][j] - arr[i - k][j - k];
+            tem_square = arr[i][j] + arr[i - k][j - k]-(arr[i][j - k]+ arr[i - k][j]);
             if (tem_square > max_square) {
                 max_square = tem_square;
             }
@@ -29,7 +29,8 @@ void init() {
     for (int i = 1; i <= n; i++) {
         for (int j = 1; j <= n; j++) {
             cin >> tem;
-            arr[i][j] = arr[i - 1][j - 1] + tem;
+            // 다 더하게 수정
+            arr[i][j] =  (-arr[i - 1][j - 1]) + arr[i][j - 1] + arr[i - 1][j] + tem;
         }
     }
 }
