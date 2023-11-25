@@ -20,7 +20,7 @@ int tem_idx;
 
 
 bool cango(int y,int x,int k){
-    if(y<0||y>N||x<0||x>M)return false;
+    if(y<1||y>N||x<1||x>M)return false;
     if(arr[y][x]<=k) return false;
     return !visited[y][x];
 }
