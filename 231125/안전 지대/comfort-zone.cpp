@@ -48,7 +48,7 @@ void run(){
     ans =0;
     int tem_ans=0;
     int myzone = 0;
-    ans_h = 0;
+    ans_h = 101;
 
 
     for(int i=1;i<=max_h;i++){
