@@ -48,7 +48,8 @@ void run(){
     ans =0;
     int tem_ans=0;
     int myzone = 0;
-    
+    ans_h = 0;
+
 
     for(int i=1;i<=max_h;i++){
         fill(&visited[0][0], &visited[0][0] + 51*51, false);
