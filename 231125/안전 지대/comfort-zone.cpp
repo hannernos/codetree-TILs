@@ -50,8 +50,8 @@ void run(){
     int myzone = 0;
     
 
-    for(int i=1;i<max_h;i++){
-        fill(&visited[0][0], &visited[0][0] + 52*52, false);
+    for(int i=1;i<=max_h;i++){
+        fill(&visited[0][0], &visited[0][0] + 51*51, false);
         myzone = 0;
         for(int j=1;j<=N;j++){
             for(int k=1;k<=M;k++){
