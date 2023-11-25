@@ -63,11 +63,11 @@ void run(){
             }
         }
         
-        if(ans<=myzone){
+        if(ans < myzone){
             ans = myzone;
-            if(ans_h>i){
-                ans_h = i;
-            }
+            ans_h = i;
+        } else if (ans == myzone && ans_h > i){
+            ans_h = i;
         }
     }
 
