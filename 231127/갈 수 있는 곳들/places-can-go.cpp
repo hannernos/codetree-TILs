@@ -41,13 +41,23 @@ bool cango(int y,int x) {
     if (y<1 || x<1 || x>n || y>n)return false;
     return true;
 }
-void run(int py,int px) {
-    visited_global[py][px] = true;
+//void run(int py,int px) {
+void run() {
+
     int dx, dy;
     int x, y;
+    int px, py;
     queue<pair<int, int>>mq;
     bool visited[101][101] = { false };
-    mq.push({ py,px });
+
+    for (int i = 1; i <= k; i++) {
+        
+        py = start_arr[i][0];
+        px = start_arr[i][1];
+
+        visited_global[py][px] = true;
+        mq.push({ py,px });
+    }
 
     while (!mq.empty()) {
         y = mq.front().first;
@@ -80,9 +90,9 @@ void run0() {
         run(y, x);
     }
     */
-    for (int i = 1; i <=k ;i++) {
-        run(start_arr[i][0], start_arr[i][1]);
-    }
+    //for (int i = 1; i <=k ;i++) {
+        //run(start_arr[i][0], start_arr[i][1]);
+    //}
 }
 void init() {
     int tem;
@@ -106,7 +116,8 @@ void init() {
 
 int main() {
     init();
-    run0();
+    //run0();
+    run();
     cout << count_answer();
 
 
