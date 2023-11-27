@@ -5,7 +5,7 @@
 using namespace std;
 
 int dir_y[5] = { 0,-1,0,1,0 };
-int dir_x[5] = { 0,0,1,0,1 };
+int dir_x[5] = { 0,0,1,0,-1 };
 int k;
 int n;
 int arr[101][101]; // 0 can 1 X
@@ -59,7 +59,7 @@ void run(int py,int px) {
             dx = x + dir_x[i];
 
             if (!cango(dy, dx))continue;
-            if (visited[dy][dx])continue;
+            if (visited[dy][x])continue;
 
             visited[dy][dx] = true;
             visited_global[dy][dx] = true;
@@ -91,7 +91,7 @@ void init() {
     }
 
     for (int i = 1; i <= k; i++) { //시작점들 주어짐
-        cin >> b >> a;
+        cin >> a >> b;
         start_queue.push({ a,b });
     }
 
