@@ -11,6 +11,7 @@ int n;
 int arr[101][101]; // 0 can 1 X
 bool visited_global[101][101] = { false };
 queue<pair<int, int>> start_queue;
+int start_arr[10001][2];
 //set<int> ms;
 
 //도착점 중복제거용(des도 정해져있는 줄 알았지만 아님)
@@ -49,7 +50,6 @@ void run(int py,int px) {
     mq.push({ py,px });
 
     while (!mq.empty()) {
-
         y = mq.front().first;
         x = mq.front().second;
         mq.pop();
@@ -71,12 +71,17 @@ void run(int py,int px) {
 //queue에 담긴 시작점 돌리기
 void run0() {
     int y, x;
-    while (!start_queue.empty()) {
+   /* 
+   while (!start_queue.empty()) {
         y = start_queue.front().first;
         x = start_queue.front().second;
         start_queue.pop();
 
         run(y, x);
+    }
+    */
+    for (int i = 1; i <=k ;i++) {
+        run(start_arr[i][0], start_arr[i][1]);
     }
 }
 void init() {
@@ -92,7 +97,9 @@ void init() {
 
     for (int i = 1; i <= k; i++) { //시작점들 주어짐
         cin >> a >> b;
-        start_queue.push({ a,b });
+        //start_queue.push({ a,b });
+        start_arr[i][0] = a;
+        start_arr[i][1] = b;
     }
 
 }
