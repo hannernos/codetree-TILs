@@ -91,7 +91,7 @@ void init() {
     }
 
     for (int i = 1; i <= k; i++) { //시작점들 주어짐
-        cin >> a >> b;
+        cin >> b >> a;
         start_queue.push({ a,b });
     }
 
