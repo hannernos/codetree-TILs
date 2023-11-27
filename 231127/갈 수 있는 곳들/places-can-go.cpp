@@ -59,7 +59,7 @@ void run(int py,int px) {
             dx = x + dir_x[i];
 
             if (!cango(dy, dx))continue;
-            if (visited[dy][x])continue;
+            if (visited[dy][dx])continue;
 
             visited[dy][dx] = true;
             visited_global[dy][dx] = true;
