@@ -67,13 +67,13 @@ void init(){
         }
 
         if(b != '.'){
-            nodes[a]->left = new Node(b);
-            nodes[b] = nodes[a]->left;
+            if(nodes.find(b) == nodes.end()) nodes[b] = new Node(b);
+            nodes[a]->left = nodes[b];
         }
 
         if(c != '.'){
-            nodes[a]->right = new Node(c);
-            nodes[c] = nodes[a]->right;
+            if(nodes.find(c) == nodes.end()) nodes[c] = new Node(c);
+            nodes[a]->right = nodes[c];
         }
     }
 }
