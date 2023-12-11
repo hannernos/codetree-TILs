@@ -68,6 +68,10 @@ void init(){
 int main() {
     // 여기에 코드를 작성해주세요.
     init();
+
+    if(y!=0||x!=x){
+        t = -1;
+    }
     cout<<t;
     return 0;
 }
