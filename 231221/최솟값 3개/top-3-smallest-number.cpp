@@ -3,7 +3,7 @@
 #define ll long long
 using namespace std;
 //func
-int run();
+ll run();
 void init();
 
 //var
