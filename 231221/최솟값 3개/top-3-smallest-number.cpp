@@ -31,7 +31,7 @@ ll run(int n,int tem){
     }
 
     if(pq.top()>tem){
-        tem_mul = (tem_mul*tem)/(pq.top());
+        tem_mul = (tem_mul/pq.top())*tem;
 
         pq.pop();
         pq.push(tem);
