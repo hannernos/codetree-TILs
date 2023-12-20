@@ -17,7 +17,7 @@ int main() {
 
 ll tem_mul;
 
-int run(int n,int tem){
+ll run(int n,int tem){
     int a,b,c;
     if(n<3){
         tem_mul = tem_mul*tem;
