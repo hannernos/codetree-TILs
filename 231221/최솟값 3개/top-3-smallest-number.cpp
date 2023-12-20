@@ -1,5 +1,6 @@
 #include <iostream>
 #include <queue>
+#define ll long long
 using namespace std;
 //func
 int run();
@@ -14,7 +15,7 @@ int main() {
     return 0;
 }
 
-int tem_mul;
+ll tem_mul;
 
 int run(int n,int tem){
     int a,b,c;
