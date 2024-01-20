@@ -4,11 +4,11 @@ using namespace std;
 
 //var
 
-int dy[4] = { -1,0,1,0 };
+int dy[4] = { 1,0,-1,0 };
 int dx[4] = { 0,1,0,-1 };
 int dir_num;
 
-int x, y;
+long long x, y;
 int nx, ny;
 
 void init() {
