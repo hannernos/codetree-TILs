@@ -15,20 +15,25 @@ void init(){
     x=0;y=0;
     dir_num=0;
 
-   //int N;
-    //cin>>N;
-    char a,b;
-    cin>>a>>b;
-    
-    if(a == 'L'){// 왼쪽 90도 회전
-        dir_num = (dir_num - 1 +4 )%4;
-    }else{//오른쪽 90도 회전
+    string buffer;
+    cin>>buffer;
 
-        dir_num = (dir_num + 1 +4 )%4;
+    int N;
+    char a;
+    N = buffer.length();
+
+    for(int i=0;i<N;i++){
+        a = buffer.at(i);
+        if(a == 'L'){// 왼쪽 90도 회전
+            dir_num = (dir_num - 1 +4 )%4;
+        }else if(a == 'R'){//오른쪽 90도 회전
+            dir_num = (dir_num + 1 +4 )%4;
+        }else if(a == 'F'){
+            x += dx[dir_num];
+            y += dy[dir_num];
+        }else{}
     }
 
-    x += dx[dir_num];
-    y += dy[dir_num];
 
     cout<<x<<" "<<y;
 }
