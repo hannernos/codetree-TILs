@@ -44,10 +44,10 @@ void init(){
 // int dir_y[4]= {1,0,-1,0};
     switch (d){
         case 'U':
-            d_int = 2;
+            d_int = 0;
             break;
         case 'D':
-            d_int = 0;
+            d_int = 2;
             break;
         case 'R':
             d_int = 3;
