@@ -1,57 +1,61 @@
 #include <iostream>
-#include <vector>
 
 using namespace std;
 
 //var 
-int dir_x[4]= {0, 1, 0, -1};
-int dir_y[4]= {1, 0, -1, 0};
+int n,t;
+int r,c,d;
 
-int r, c;
-char d;
-int d_int;
-int n; // 2 50
-int t; // 1 100
+int dir_y[4] = {1,0,-1,0};
+int dir_x[4] = {0,1,0,-1};
 
-void run() {
-    int tx, ty;
-    tx = c - 1;
-    ty = r - 1;
-    int dx, dy;
-    int td = d_int;
-    for(int i = 0; i < t; i++) {
-        dx = tx + dir_x[td];
+//func
+
+void run(){
+
+    int ty = r;
+    int tx = c;
+
+    int dy,dx;
+
+    int td = d;
+    for(int i=0;i<t;i++){
         dy = ty + dir_y[td];
-
-        if(dy < 0 || dx < 0 || dy >= n || dx >= n) {
-            td = (td + 2) % 4;
-        } else {
-            tx = dx;
+        dx = tx + dir_x[td];
+        if(dy<1||dx<1||dy>n||dx>n){
+            td = (td + 2 ) % 4;
+        }else{
             ty = dy;
+            tx = dx;
         }
+
     }
-    cout << ty + 1 << " " << tx + 1; 
+
+    cout<<ty<<" "<<dx;
 }
-void init() {
-    cin >> n >> t;
-    cin >> r >> c >> d;
-    switch (d) {
+void init(){
+    cin>>n>>t;
+    cin>>r>>c;//r행 c열
+    char cd;
+    cin>>cd;
+    switch(cd){
         case 'U':
-            d_int = 0;
+            d = 0;
             break;
         case 'D':
-            d_int = 2;
+            d = 2;
             break;
         case 'R':
-            d_int = 3;
+            d = 1;
             break;
         case 'L':
-            d_int = 1;
+            d = 3;
             break;
     }
-}
 
+}
 int main() {
+    // 여기에 코드를 작성해주세요.
     init();
     run();
     return 0;
