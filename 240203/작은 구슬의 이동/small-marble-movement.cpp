@@ -40,10 +40,10 @@ void init(){
     cin>>cd;
     switch(cd){
         case 'U':
-            d = 0;
+            d = 2;
             break;
         case 'D':
-            d = 2;
+            d = 0;
             break;
         case 'R':
             d = 1;
