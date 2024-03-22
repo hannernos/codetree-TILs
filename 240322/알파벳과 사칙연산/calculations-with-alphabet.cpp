@@ -15,6 +15,8 @@
 #include <vector>
 #include <cstring>
 
+#define ll long long
+
 using namespace std;
 
 //func
@@ -27,7 +29,7 @@ char input_buf[201];
 int input_len;
 int char_len;
 int oper_len;
-int ans; // max value;
+ll ans; // max value;
 int tem_value;
 
 vector<char> ori_char_vector;
