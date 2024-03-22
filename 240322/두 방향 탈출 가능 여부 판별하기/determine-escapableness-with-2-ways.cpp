@@ -39,7 +39,7 @@ void init() {
 void run(int y, int x) {
     int dx, dy;
 
-    if (x == n - 1 && y == n - 1) {
+    if (x == m - 1 && y == n - 1) {
         ans = true;
         return;
     }
