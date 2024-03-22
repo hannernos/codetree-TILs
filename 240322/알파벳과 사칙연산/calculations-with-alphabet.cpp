@@ -39,7 +39,6 @@ vector<int> char_vector;
 vector<char> oper_vector;
 
 int char_table[213];//알파벳 중복등장 여부 확인용
-//int lev_table[213];//각 알파벳 첫 등장 레벨
 
 int main() {
     // 여기에 코드를 작성해주세요.
