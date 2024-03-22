@@ -39,6 +39,7 @@ vector<int> char_vector;
 vector<char> oper_vector;
 
 int char_table[213];//알파벳 중복등장 여부 확인용
+//int lev_table[213];//각 알파벳 첫 등장 레벨
 
 int main() {
     // 여기에 코드를 작성해주세요.
@@ -88,15 +89,21 @@ void run(int lev) {
 
     }else{ //false -> 0 -> char
 
-        if (char_table[input_buf[lev] - 0] == 0) {//0-> 처음 나온 알파벳이라면
+        if (char_table[input_buf[lev] - 0] == 0) {//첫 등장(init)
 
             for (int i = 1; i <= 4; i++) {
+                char_table[input_buf[lev] - 0] = i;
                 char_vector.push_back(i);
+
                 run(lev + 1);
+
+                char_table[input_buf[lev] - 0] = 0;
                 char_vector.pop_back();
+
+
             }
         }
-        else {//이미 나온 알파벳
+        else {//이미 나온 알파벳(그대로)
             char_vector.push_back(char_table[input_buf[lev] - 0]);
             run(lev + 1);
             char_vector.pop_back();
