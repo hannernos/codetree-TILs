@@ -39,7 +39,7 @@ void init() {
 void run(int y, int x) {
     int dx, dy;
 
-    if (dx == n - 1 && dy == n - 1) {
+    if (x == n - 1 && y == n - 1) {
         ans = true;
         return;
     }
@@ -48,7 +48,7 @@ void run(int y, int x) {
         dx = x + dir_x[i];
         dy = y + dir_y[i];
 
-        if (dx < 0 || dx >= n || dy < 0 || dy >= n || arr[dy][dx] == 0) {
+        if (dx < 0 || dx >= m || dy < 0 || dy >= n || arr[dy][dx] == 0) {
             continue;
         }
 
