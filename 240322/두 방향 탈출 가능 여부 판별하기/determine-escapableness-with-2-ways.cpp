@@ -29,7 +29,7 @@ int main() {
 void init() {
     cin >> n >> m;
     for (int i = 0; i < n; i++) {
-        for (int j = 0; j < n; j++) {
+        for (int j = 0; j < m; j++) {
             cin >> arr[i][j];
         }
     }
@@ -48,7 +48,7 @@ void run(int y, int x) {
         dx = x + dir_x[i];
         dy = y + dir_y[i];
 
-        if (dx < 0 || dx >= n || dy < 0 || dy >= n || arr[dy][dx] == 1) {
+        if (dx < 0 || dx >= n || dy < 0 || dy >= n || arr[dy][dx] == 0) {
             continue;
         }
 
