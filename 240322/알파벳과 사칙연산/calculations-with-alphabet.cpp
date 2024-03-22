@@ -30,7 +30,7 @@ int input_len;
 int char_len;
 int oper_len;
 ll ans; // max value;
-int tem_value;
+ll tem_value;
 
 vector<char> ori_char_vector;
 vector<char> ori_oper_vector;
@@ -108,7 +108,7 @@ void run(int lev) {
 
 void check() {
     //var
-    int pre_int;
+    ll pre_int;
     int tem_int;
     int tem_iter;
 
