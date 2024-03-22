@@ -13,6 +13,8 @@ int dir_x[2] = { 0,1 };
 int dir_y[2] = { 1,0 };
 bool ans;
 
+bool visited[213][213];
+
 int n, m;
 
 int arr[213][213];
@@ -52,6 +54,10 @@ void run(int y, int x) {
             continue;
         }
 
+        if(visited[dy][dx]){
+            continue;
+        }
+        visited[dy][dx] = true;
         run(dy, dx);
 
     }
