@@ -42,7 +42,7 @@ int char_table[213];//알파벳 중복등장 여부 확인용
 
 int main() {
     // 여기에 코드를 작성해주세요.
-
+    ans = -(21e5);
     init();
     run(0);
     cout << ans;
