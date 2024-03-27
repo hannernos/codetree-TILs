@@ -27,7 +27,7 @@ public:
 	Node(const string& data, Node* nxt) : data(data), nxt(nxt),prev(nullptr) {}
 	~Node() {}
 
-}nodes [50000];
+}nodes [550000];
 
 int nodecnt;
 
