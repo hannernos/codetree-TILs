@@ -93,10 +93,15 @@ public:
 			this->append(S_value);
 			break;
 		case 3:
-			cur = cur->prev;
+			if (cur->prev != nullptr) {
+			//이전 노드가 존재한다면
+				cur = cur->prev;
+			}
 			break;
 		case 4:
-			cur = cur->nxt;
+			if (cur->nxt != nullptr) {
+				cur = cur->nxt;
+			}
 			break;
 
 		default:
