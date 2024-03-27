@@ -45,13 +45,17 @@ public:
 		tem->setData(data);
 		//이전 노드가 있을때
 		if (cur->prev != nullptr) {
-			
 			tem->prev = cur->prev;
+			cur->prev->nxt = tem;
+
 			cur->prev = tem;
+			tem->nxt = cur;
 		}
 		else {
 		//이전 노드가 없을 때
 			cur->prev = tem;
+			tem->nxt = cur;
+
 			root = tem;
 		
 		}
@@ -67,11 +71,18 @@ public:
 		//다음 노드 있을 때
 		if (cur->nxt != nullptr) {
 			tem->nxt = cur->nxt;
+			cur->nxt->prev = tem;
+			
 			cur->nxt = tem;
+			tem->prev = cur;
+
+
 		}
 		else {
 			//다음 노드 없을 때
 			cur->nxt = tem;
+			tem->prev = cur;
+
 			tail = tem;
 		}
 
