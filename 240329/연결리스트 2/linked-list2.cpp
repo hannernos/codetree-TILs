@@ -57,7 +57,7 @@ public:
         }
         else {
         //이상한 입력값
-            cout << "unexpected oper1 input\n";
+            //cout << "unexpected oper1 input\n";
         }
         
     }
