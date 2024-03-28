@@ -13,7 +13,7 @@ public:
     ~Node() {}
 
 
-}nodes[10001];
+}nodes[100001];
 int nodeCnt;
 
 class MyList {
