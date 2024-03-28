@@ -76,8 +76,11 @@ public:
         }
         else {
             //i번노드 뒤에 없다면
-            connect(&nodes[i], &nodes[j]);
+            //connect(&nodes[i], &nodes[j]);
         
+            nodes[i].nxt = &nodes[j];
+            nodes[j].prev = &nodes[i];
+
         }
     }
     void oper4(int i) {
@@ -95,6 +98,17 @@ public:
         else {
             cout << "0";
         }cout << "\n";
+    }
+    //for debug
+    void print() {
+        Node* tem;
+        tem = root;
+        while (tem != nullptr) {
+            cout << tem->data<<" ";
+            tem = tem->nxt;
+        }
+
+        cout << endl;
     }
 
 };
@@ -115,7 +129,7 @@ void init() {
     int Q;
     cin >> N >> Q;
 
-    for (int i = 0; i < N; i++) {
+    for (int i = 0; i <= N; i++) {
         nodes[i].data = i;
     }
 
@@ -123,6 +137,7 @@ void init() {
     //run
     for (int i = 0; i < Q; i++) {
         getOperator();
+        //ml.print(); // for debug
     }
     nodeCnt = 0;
     //연산을 마친 후 1번부터 n번까지 각 노드의 다음 노드의 번호를 차례대로 한줄에 출력 (존재하지 않으면 0 출력)
