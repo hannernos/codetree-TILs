@@ -32,14 +32,32 @@ public:
 
     void oper1(int i) {
         //i번노드를 그 노드가 속해 있던 연결리스트에서 뽑아서 단일노드가 되게 함
-        if (nodes[i].prev != nullptr) {
-            nodes[i].prev->nxt = nullptr;
-            nodes[i].prev = nullptr;
-        }
+        //1. 111 앞뒤가 다 있을 때-> 이어줘야 함
+        //2. 110 앞만 있을 때 -> 
+        //3. 011 뒤만 있을 때 -> 
+        bool a = (nodes[i].prev != nullptr);
+        bool b = (nodes[i].nxt != nullptr);
+        Node* preNode = nodes[i].prev;
+        Node* nxtNode = nodes[i].nxt;
+        if (a&&b) {
+            disconnect(preNode, &nodes[i]);
+            disconnect(&nodes[i], nxtNode);
 
-        if (nodes[i].nxt != nullptr) {
-            nodes[i].nxt->prev = nullptr;
-            nodes[i].nxt = nullptr;
+            connect(preNode, nxtNode);
+        }
+        else if (a) {
+            disconnect(preNode, &nodes[i]);
+            //nodes[i].prev->nxt = nullptr;
+            //nodes[i].prev = nullptr;
+        }
+        else if (b) {
+            disconnect(&nodes[i], nxtNode);
+            //nodes[i].nxt->prev = nullptr;
+            //nodes[i].nxt = nullptr;
+        }
+        else {
+        //이상한 입력값
+            cout << "unexpected oper1 input\n";
         }
         
     }
@@ -101,6 +119,7 @@ public:
     }
     //for debug
     void print() {
+        cout << "print: ";
         Node* tem;
         tem = root;
         while (tem != nullptr) {
